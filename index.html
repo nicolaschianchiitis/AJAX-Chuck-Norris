@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prova AJAX</title>
+    </head>
+    <body>
+        <h1>La filosofia di Chuck Norris</h1>
+        <p id="sentence"></p>
+        <script>
+            let url = "https://api.chucknorris.io/jokes/random";
+            fetch(url)
+            .then(
+                response => response.json() // Converto in formato JSON
+                // console.log(response) // Stampo nella console la risposta in JSON
+            )
+            .then(
+                result => {
+                    console.log(result),
+                    document.getElementById("sentence").innerHTML = result.value
+                }
+            );
+        </script>
+    </body>
+</html>
